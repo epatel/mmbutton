@@ -1,4 +1,4 @@
-import 'package:mmbutton/index.dart';
+import 'package:flutter/material.dart';
 
 /// Custom button style class that defines all visual properties for different states
 class CustomButtonStyle {

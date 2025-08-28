@@ -3,11 +3,11 @@ import 'package:mmbutton/index.dart';
 /// Custom button widget built from scratch
 class CustomButton extends StatefulWidget {
   const CustomButton({
-    super.key,
     required this.text,
     this.onPressed,
     this.buttonStyle,
     this.isEnabled = true,
+    super.key,
   });
 
   final String text;
@@ -31,10 +31,9 @@ class _CustomButtonState extends State<CustomButton>
   @override
   void initState() {
     super.initState();
+    final style = widget.buttonStyle ?? const CustomButtonStyle();
     _animationController = AnimationController(
-      duration:
-          widget.buttonStyle?.animationDuration ??
-          const Duration(milliseconds: 200),
+      duration: style.animationDuration,
       vsync: this,
     );
 
@@ -106,7 +105,11 @@ class _CustomButtonState extends State<CustomButton>
 
   @override
   Widget build(BuildContext context) {
-    final style = widget.buttonStyle ?? const CustomButtonStyle();
+    final buttonTheme = Theme.of(context).extension<CustomButtonTheme>();
+    final style =
+        widget.buttonStyle ??
+        buttonTheme?.defaultStyle ??
+        const CustomButtonStyle();
     final effectiveOnPressed = widget.isEnabled ? widget.onPressed : null;
 
     return MouseRegion(

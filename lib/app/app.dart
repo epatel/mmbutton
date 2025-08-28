@@ -11,6 +11,9 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          extensions: <ThemeExtension<dynamic>>[
+            OurStyles.buttonTheme,
+          ],
         ),
         home: const MyHomePage(title: 'Flutter Demo Home Page'),
       ),

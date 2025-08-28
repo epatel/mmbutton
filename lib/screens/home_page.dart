@@ -25,28 +25,32 @@ class MyHomePage extends StatelessWidget {
                 ),
                 const SizedBox(height: 32),
                 // Increment button using demo style
-                OurButton.demo1(
+                OurButtons.demo1(
+                  context: context,
                   text: 'Increment',
                   onPressed: () => counterProvider.increment(),
                 ),
                 const SizedBox(height: 16),
                 // Decrement button using demo style
-                OurButton.demo2(
+                OurButtons.demo2(
+                  context: context,
                   text: 'Decrement',
                   onPressed: () => counterProvider.decrement(),
                 ),
                 const SizedBox(height: 16),
                 // Reset button using demo style
-                OurButton.demo3(
+                OurButtons.demo3(
+                  context: context,
                   text: 'Reset',
                   onPressed: () => counterProvider.reset(),
                 ),
                 const SizedBox(height: 16),
                 // Disabled button using demo style
-                OurButton.demo4(text: 'Disabled Button'),
+                OurButtons.demo4(context: context, text: 'Disabled Button'),
                 const SizedBox(height: 16),
                 // Custom size button using demo style
-                OurButton.demo5(
+                OurButtons.demo5(
+                  context: context,
                   text: 'Custom Size',
                   onPressed: () => counterProvider.increment(),
                 ),
